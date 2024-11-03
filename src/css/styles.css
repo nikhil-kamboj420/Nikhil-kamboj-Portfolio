@@ -1,0 +1,13 @@
+@import './tailwind.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom SASS styles */
+.custom-button {
+  background-color: #3490dc;
+  @apply text-white pt-10 px-4 rounded;
+}
+
+.h {
+  background-color: #3490dc;
+}/*# sourceMappingURL=styles.css.map */

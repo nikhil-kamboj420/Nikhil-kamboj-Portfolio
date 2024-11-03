@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom SASS styles */
+$primary-color: #3490dc;
+
+.custom-button {
+  background-color: $primary-color;
+  @apply text-white pt-10 px-4 rounded;
+}
