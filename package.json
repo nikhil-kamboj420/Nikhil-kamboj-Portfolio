@@ -3,23 +3,27 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "build:scss": "sass src/css/styles.scss dist/css/styles.css",
-  "build:tailwind": "tailwindcss -i dist/css/styles.css -o dist/css/styles.css",
-  "build": "npm run build:scss && npm run build:tailwind",
-  "watch:scss": "sass src/css/styles.scss dist/css/styles.css --watch",
-  "watch:tailwind": "tailwindcss -i dist/css/styles.css -o dist/css/styles.css --watch",
-  "start": "npm-run-all --parallel watch:scss watch:tailwind"
-},
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "css-loader": "^7.1.2",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
+    "postcss-loader": "^8.1.1",
     "sass": "^1.80.6",
-    "tailwindcss": "^3.4.14"
+    "sass-loader": "^16.0.3",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.14",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }
