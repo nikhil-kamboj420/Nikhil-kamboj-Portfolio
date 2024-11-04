@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:css": "postcss src/css/styles.scss -o dist/css/styles.css",
-    "watch:css": "postcss src/css/styles.scss -o dist/css/styles.css --watch",
-    "build": "npm run build:css",
-    "start": "npm run watch:css"
+  "build:scss": "sass src/css/styles.scss dist/css/styles.css",
+  "build:tailwind": "tailwindcss -i dist/css/styles.css -o dist/css/styles.css",
+  "build": "npm run build:scss && npm run build:tailwind",
+  "watch:scss": "sass src/css/styles.scss dist/css/styles.css --watch",
+  "watch:tailwind": "tailwindcss -i dist/css/styles.css -o dist/css/styles.css --watch",
+  "start": "npm-run-all --parallel watch:scss watch:tailwind"
 },
   "keywords": [],
   "author": "",
@@ -14,6 +16,7 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.4.47",
     "postcss-cli": "^11.0.0",
     "sass": "^1.80.6",

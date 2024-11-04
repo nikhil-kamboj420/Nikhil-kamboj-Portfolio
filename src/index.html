@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Website</title>
-  <link rel="stylesheet" href="../dist/css/styles.css">
-</head>
-<body>
-  <h1 class="text-7xl mt-3">Welcome to My Portfolio</h1>
-  <button class="text-4xlv bg-black custom-button ">Click Me</button>
-  <script src="./js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+  </head>
+  <body>
+    <!-- start Header Section -->
+   <header class="header">
+     <!-- start Navbar Section -->
+     <nav class="navbar">
+      <div class="nav-container flex  justify-evenly items-center pt-6 pb-6 ">
+        <div class="logo" >
+          <img
+            src="../public/images/logo.png"
+            alt="logo image"
+          />
+        </div>
+        <div>
+          <ul class="list-items flex gap-[6rem]">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="border-2 border-solid p-1 border-black rounded-[3rem] shadow-xl shadow-black">
+         <a class="flex gap-3 p-[0.4rem]  text-[1.3rem]" href="../public/additional-files/Nikhil_kamboj_Resume.pdf" download>
+          <span>&#x2193;</span>
+          <p>Download CV</p>
+         </a>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar Section-->
+   </header>
+  <!-- End Header Section -->
+
+  
+    
+   
+    <script src="./js/main.js"></script>
+  </body>
 </html>
