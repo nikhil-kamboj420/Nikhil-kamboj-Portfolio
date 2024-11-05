@@ -721,9 +721,4 @@ body {
   }
 }
 
-.wrapper > .profile-img > img {
-  max-width: 20rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-}
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$color-green: #37e614;
+$bg-black:#070c0f;
+$bg-light-black:#2d3132;
+$bg-dark-green:#bbfe03;
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +42,7 @@ body {
   margin: auto;
   background-image: url("../../public/images/headerBG.jpg");
   background-position: left;
-  box-shadow: 2px 2px 5px 4px #37e614 inset;
+  box-shadow: 2px 2px 5px 4px $color-green inset;
 }
 
 .logo {
@@ -56,12 +61,8 @@ body {
     color: #f0dd35;
     border: 2px solid rgb(72, 69, 69);
     padding: 0.3rem;
-    box-shadow: 4px 2px 3px #37e614;
+    box-shadow: 4px 2px 3px $color-green;
     border-radius: 2rem;
-  }
-
-  & > li:hover {
-    background-color: #3a3b3a;
   }
 }
 
@@ -71,14 +72,13 @@ body {
 
 .main-section {
   @include bg-style("../../public/images/headerBG.jpg");
-  height: 100vh;
+  height: 90vh;
 }
 
 .wrapper{
   max-width: 80%;
   margin: auto;
-  position: relative;
-  top:-6rem;
+  height: 80vh;
 
   //*  intro styling  *//
   .intro-text {
@@ -101,11 +101,12 @@ body {
   }
   //! END intro styling  *//
   
-
-  &>.profile-img>img{
-    max-width: 20rem;
+  .profile-img img{
+    width: 25rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    filter: drop-shadow(4px 4px 3px #37e614 );
+    filter: drop-shadow(4px 4px 4px $color-green);
+    border: 5px solid white;
   }
+
 }
