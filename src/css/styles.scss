@@ -1,11 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-$color-white:#f5f5f5;
+$color-white: #f5f5f5;
 $color-green: #37e614;
-$bg-black:#070c0f;
-$bg-light-black:#2d3132;
-$bg-dark-green:#bbfe03;
+$bg-black: #070c0f;
+$bg-light-black: #2d3132;
+$bg-dark-green: #bbfe03;
+$dark-black: #0f0f0f;
+$bg-contact: #373346;
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +24,7 @@ body {
       to bottom,
       rgba(0, 0, 0, 1),
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 
+      rgba(0, 0, 0, 1)
     ),
     url($image-url);
   background-repeat: no-repeat;
@@ -67,7 +69,7 @@ body {
 .main-section {
   @include bg-style("../../public/images/headerBG.jpg");
 }
-.wrapper{
+.wrapper {
   max-width: 80%;
   margin: auto;
   //*  intro styling  *//
@@ -88,7 +90,7 @@ body {
     }
   }
   //! END intro styling  //
-  .profile-img img{
+  .profile-img img {
     width: 25rem;
     aspect-ratio: 1;
     object-fit: contain;
@@ -103,28 +105,33 @@ body {
 
 #about-section {
   width: 100%;
-  height: 100rem;
-  background: linear-gradient(90deg, rgba(7, 12, 15, 1) 0%, rgba(45, 49, 50, 1) 100%);
-  & *{
+  height: auto;
+  background: linear-gradient(
+    90deg,
+    rgba(7, 12, 15, 1) 0%,
+    rgba(45, 49, 50, 1) 100%
+  );
+  padding: 4rem;
+  & * {
     color: $bg-black;
   }
-  .about-wapper{
+  .about-wapper {
     max-width: 90%;
-    margin:  auto;
+    margin: auto;
     box-shadow: 10px 10px 20px $bg-black;
-    .part1{
+    .part1 {
       padding: 2rem;
-      .my-image{
+      .my-image {
         box-shadow: 10px 10px 20px $bg-black;
       }
-      .my-image img{
+      .my-image img {
         max-width: 25rem;
         aspect-ratio: 1;
         object-fit: contain;
         clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
         filter: drop-shadow(31px 8px 31px $bg-dark-green);
       }
-      .message-bubble{
+      .message-bubble {
         padding: 20px;
         background-color: #e0f7fa;
         border-radius: 15px;
@@ -134,50 +141,150 @@ body {
         color: #00796b;
       }
       .message-bubble::after {
-        content: '';
+        content: "";
         position: absolute;
-        bottom: -20px; 
-        right: 20px; 
+        bottom: -20px;
+        right: 20px;
         width: 0;
         height: 0;
-        border: 20px solid transparent; 
+        border: 20px solid transparent;
         border-top-color: #e0f7fa;
         border-bottom: 0;
         border-right: 0;
-        border-left: 20px solid transparent; 
-    }
-      .part1-contant{
+        border-left: 20px solid transparent;
+      }
+      .part1-contant {
         background-color: $bg-dark-green;
         padding: 2rem;
         box-shadow: 10px 10px 20px $bg-black;
-        & *{
+        & * {
           color: #070c0f;
           box-shadow: 10px 10px 20px $bg-black;
         }
       }
-      .contant-wrapper{
-        & h3, a{
-         font-weight: 500;
-         background-color: $bg-dark-green;
-         border-radius: 2rem;
-         box-shadow: 10px 10px 10px $bg-black;
-         padding: .5rem;
+      .contant-wrapper {
+        & h3,
+        a {
+          font-weight: 500;
+          background-color: $bg-dark-green;
+          border-radius: 2rem;
+          box-shadow: 10px 10px 10px $bg-black;
+          padding: 0.5rem;
         }
-     }
-    }
-   .part2{
-    .part2-contant{
-      background-color: $bg-dark-green;
-      max-width: 80%;
-      border-radius: 0 3rem 3rem 0;
-      box-shadow: 10px 10px 10px $bg-black;
-      h1,p,li{
-        font-size: 1.4rem;
       }
     }
-   }
+    .part2 {
+      .part2-contant {
+        background-color: $bg-dark-green;
+        max-width: 80%;
+        border-radius: 0 3rem 3rem 0;
+        box-shadow: 10px 10px 10px $bg-black;
+        h1,
+        p,
+        li {
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 }
 
+//* styling on projects-section *//
 
+#projects-section {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $dark-black;
+  padding: 3rem 0;
+  * {
+    color: $color-white;
+  }
+  h4 {
+    font-size: 4rem;
+    margin-bottom: 1.92rem;
+    box-shadow: 10px 10px 10px $bg-light-black;
+    border-radius: 50% 60% 50% 50%;
+  }
+}
+.project-flex {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.project-card {
+  background-color: $bg-light-black;
+  border-radius: 0.512rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 10px 10px 10px $bg-light-black;
+  &:hover {
+    transform: translateY(-0.64rem);
+    box-shadow: 10px 10px 10px $bg-dark-green;
+  }
+  img {
+    max-width: 30rem;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+  }
+  .content {
+    padding: 1.28rem;
+    max-width: 30rem;
+    text-align: center;
+  }
+  a {
+    display: inline-block;
+    margin-top: 0.96rem;
+    color: #007bff !important;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 
+// !End projects-section  //
+
+//? Styling on Contact Section
+#contact-section {
+  max-width: 100%;
+  margin: auto;
+  padding: 2rem;
+  background-color: $bg-contact;
+}
+.contact-wrapper {
+  max-width: 75%;
+  margin: auto;
+  box-shadow: 10px 10px 10px $dark-black inset, 10px 10px 10px $dark-black;
+  padding: 2rem;
+}
+
+@import "https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css";
+
+.input-field {
+  @apply w-full px-4 py-2 border rounded-lg text-gray-700 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.btn-submit {
+  @apply w-full bg-blue-500 text-white font-semibold py-3 rounded-lg hover:bg-blue-600 transition duration-300;
+}
+
+// iframe styles
+
+.location iframe {
+  width: 30rem;
+  height: 73vh;
+  box-shadow: 10px 10px 10px $dark-black;
+}
+
+.form-wapper {
+  box-shadow: 10px 10px 10px $dark-black;
+}
+//! End Contact Section
