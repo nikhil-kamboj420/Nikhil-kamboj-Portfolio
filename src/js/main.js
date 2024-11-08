@@ -1,5 +1,6 @@
+
 // Smooth scrolling for navigation links
-document.querySelectorAll('nav a').forEach(anchor => {
+document.querySelectorAll('.list-items a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href');
@@ -13,7 +14,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 
 // Active link highlighting on scroll
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('.list-items a');
 
 window.addEventListener('scroll', () => {
   let currentSection = '';
@@ -34,14 +35,19 @@ window.addEventListener('scroll', () => {
 });
 
 
+// about secton acheivments
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mouseover', () => {
+    card.classList.add('shadow-2xl');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('shadow-2xl');
+  });
+});
 
 
-
-
-
-
-
-
+// form validation
 
 function validateForm() {
   // Get form values

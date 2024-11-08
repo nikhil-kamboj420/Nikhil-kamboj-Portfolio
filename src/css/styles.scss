@@ -41,6 +41,7 @@ body {
   background-image: url("../../public/images/headerBG.jpg");
   background-position: bottom;
   box-shadow: 2px 2px 5px 4px $color-green inset;
+  animation: changeBackground 10s 1;
 }
 .logo {
   & > img {
@@ -74,8 +75,28 @@ body {
 //* styles on Main section *//
 
 .main-section {
-  @include bg-style("../../public/images/headerBG.jpg");
+  @include bg-style('../../public/images/headerBG.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: changeBackground 9s 1; 
+
+  @keyframes changeBackground {
+      0% {
+          background-image: url("../../public/images/headerBG.jpg");
+      }
+      33% {
+          background-image: url("../../public/images/photo-1607001172087-308413970c9e.avif");
+      }
+      66% {
+          background-image: url("../../public/images/logo.png");
+      }
+      100% {
+          background-image: url("../../public/images/premium_photo-1678566154673-a728037f3f00.avif"); 
+      }
+  }
 }
+
+
 .wrapper {
   max-width: 80%;
   margin: auto;
@@ -195,6 +216,67 @@ body {
     }
   }
 }
+
+//* about secton acheivments
+
+.text-ach >*{
+  color: $color-white !important;
+}
+.card {
+  background-color: $bg-dark-green;
+  color: $color-white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.highlight {
+  color: #4A90E2;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* Slide-up Animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+// !End  of About Section//
+
 
 .contact-links {
   .flex a {
