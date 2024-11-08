@@ -10,23 +10,23 @@
   </head>
   <body>
     <!--* start Header Section *-->
-    <header class="header">
+    <header id="header">
       <!--* start Navbar Section *-->
-      <nav class="navbar">
+      <nav class="navbar fixed z-[999] w-[100vw]">
         <div class="nav-container flex justify-evenly items-center pt-6 pb-6">
           <div class="logo">
             <img src="../public/images/logo.png" alt="logo image" />
           </div>
           <div>
             <ul class="list-items flex gap-[3rem]">
-              <li><a href="#">Home</a></li>
+              <li><a href="#header">Home</a></li>
               <li><a href="#about-section">About</a></li>
               <li><a href="#projects-section">Projects</a></li>
               <li><a href="#contact-section">Contact</a></li>
             </ul>
           </div>
           <div
-            class="border-2 border-solid p-1 border-black rounded-[3rem] shadow-xl shadow-black"
+            class="border-2 border-solid p-1 border-black text-white rounded-[3rem] shadow-xl shadow-black"
           >
             <a
               class="flex gap-3 p-[0.4rem] text-[1.3rem]"
@@ -45,10 +45,10 @@
 
     <!--*? start Main Section -->
     <main class="main-section flex justify-evenly place-items-center">
-      <div class="wrapper flex justify-evenly place-items-center">
-        <div class="intro-content max-w-[60%]">
-          <h class="intro-text text-6xl">Welcome to My Portfolio!</h>
-          <p class="intro-text text-[1.2rem] mt-1">
+      <div class="wrapper shadow-xl shadow-black flex justify-evenly place-items-center">
+        <div class="intro-content max-w-[60%] ">
+          <h class="intro-text text-6xl shadow-xl shadow-black">Welcome to My Portfolio!</h>
+          <p class="intro-text text-[1.2rem] mt-5">
             I'm <span class="font-extrabold">Nikhil Kamboj</span>, a
             <span class="font-extrabold">Frontend Developer</span> skilled in
             HTML, CSS, JavaScript, SASS, Tailwind CSS, and API integration, with

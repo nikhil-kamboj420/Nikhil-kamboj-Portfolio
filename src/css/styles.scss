@@ -34,14 +34,12 @@ body {
     color: $color-white;
   }
 }
-.header {
-  @include bg-style("../../public/images/headerBG.jpg");
-}
+
 .navbar {
-  max-width: 80%;
+  max-width: 100%;
   margin: auto;
   background-image: url("../../public/images/headerBG.jpg");
-  background-position: left;
+  background-position: bottom;
   box-shadow: 2px 2px 5px 4px $color-green inset;
 }
 .logo {
@@ -61,6 +59,14 @@ body {
     padding: 0.3rem;
     box-shadow: 4px 2px 3px $color-green;
     border-radius: 2rem;
+  }
+  // class for currentSection link, Navigation
+  .active{
+   background-color: $bg-dark-green;
+   color: $bg-black;
+   padding: 0.3rem;
+   border-radius: 2rem;
+   box-shadow: 4px 2px 3px $color-green;
   }
 }
 //! END NAVBAR //
