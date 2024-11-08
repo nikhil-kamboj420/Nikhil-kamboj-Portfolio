@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="../dist/css/styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
   </head>
   <body>
     <!--* start Header Section *-->
@@ -18,9 +20,9 @@
           <div>
             <ul class="list-items flex gap-[3rem]">
               <li><a href="#">Home</a></li>
-              <li><a href="about-me">About</a></li>
-              <li><a href="projects-section">Projects</a></li>
-              <li><a href="contact-section">Contact</a></li>
+              <li><a href="#about-section">About</a></li>
+              <li><a href="#projects-section">Projects</a></li>
+              <li><a href="#contact-section">Contact</a></li>
             </ul>
           </div>
           <div
@@ -93,30 +95,43 @@
           </div>
 
           <div class="contant-wrapper shadow-xl shadow-black">
-            <div
-              class="contact-links text-[1.2rem] flex flex-wrap justify-start"
-            >
+            <div class="contact-links text-[1.2rem] flex flex-wrap justify-start">
               <h3 class="text-3xl mb-2 mt-2">Contact</h3>
+              <!-- Phone and Email Section -->
               <div class="flex gap-4 w-full justify-evenly mb-8">
-                <a href="tel:+918813965378">8813965378</a>
-                <a href="mailto:kambojnikhil44@gmail.com"
-                  >kambojnikhil44@gmail.com</a
-                >
+                <!-- Phone Icon -->
+                <a href="tel:+918813965378" class="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition-colors duration-300">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>8813965378</span>
+                </a>
+                <!-- Email Icon -->
+                <a href="mailto:kambojnikhil44@gmail.com" class="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition-colors duration-300">
+                  <i class="fas fa-envelope"></i>
+                  <span>kambojnikhil44@gmail.com</span>
+                </a>
               </div>
+          
+              <!-- Address, LinkedIn, and GitHub Section -->
               <div class="flex gap-4 w-full justify-evenly">
-                <a
-                  class="block"
-                  href="https://www.google.com/maps/place/Yamunanagar,+Haryana/@30.130556,77.270556,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed3f3f3f3f3f:0x6e5a5a5a5a5a5a5a!8m2!3d30.130556!4d77.270556"
-                  >Current Address</a
-                >
-                <a href="https://www.linkedin.com/in/nikhil-kamboj-409a432b0/"
-                  >LinkedIn</a
-                >
-                <a href="https://github.com/nikhil-kamboj420">GitHub</a>
+                <!-- Address Icon -->
+                <a href="https://www.google.com/maps/place/Yamunanagar,+Haryana/@30.130556,77.270556,12z/data=!3m1!4b1!4m5!3m4!1s0x390fed3f3f3f3f3f:0x6e5a5a5a5a5a5a5a!8m2!3d30.130556!4d77.270556" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>Current Address</span>
+                </a>
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/nikhil-kamboj-409a432b0/" class="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors duration-300">
+                  <i class="fab fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <!-- GitHub Icon -->
+                <a href="https://github.com/nikhil-kamboj420" class="flex items-center gap-2 text-gray-800 hover:text-gray-600 transition-colors duration-300">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </a>
               </div>
             </div>
           </div>
-        </div>
+          
 
         <div class="part2">
           <div class="part2-contant border-2 border-solid border-white">
@@ -245,91 +260,53 @@
       <div
         class="contact-wrapper flex flex-wrap justify-center items-center h-screen gap-5rem"
       >
-        <div class="location w-full lg:w-1/2">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27605.383069603406!2d77.27021214999999!3d30.132172549999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ef99b8b19ea25%3A0xfc76e2b1f391902!2sYamuna%20Nagar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1731010128103!5m2!1sen!2sin"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="form-wapper w-full lg:w-1/2">
-          <form
-            id="contactForm"
-            class="bg-white p-8 rounded-lg shadow-md w-full max-w-md mx-auto"
-          >
-            <h2 class="text-2xl font-semibold mb-6 text-gray-800">
-              Contact Me
-            </h2>
-
+      <div class="location w-full lg:w-1/2 relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27605.383069603406!2d77.27021214999999!3d30.132172549999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ef99b8b19ea25%3A0xfc76e2b1f391902!2sYamuna%20Nagar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1731010128103!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full h-full transition-opacity duration-700 ease-in-out opacity-0 hover:opacity-100"
+        ></iframe>
+      </div>
+      
+        <div class="form-wrapper  w-full lg:w-1/2">
+          <form id="contactForm" class="bg-white p-8 rounded-lg shadow-lg shadow-black w-full max-w-md mx-auto">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Contact Me</h2>
+        
             <div class="mb-4">
-              <label
-                for="name"
-                class="text-[1rem] block text-gray-700 font-medium mb-2"
-                >Name</label
-              >
-              <input
-                type="text"
-                id="name"
-                class="input-field"
-                placeholder="Your Name"
-              />
+              <label for="name" class="text-[1rem] block text-gray-700 font-medium mb-2">Name</label>
+              <input type="text" id="name" name="user_name" class="input-field" placeholder="Your Name" required>
             </div>
-
+        
             <div class="mb-4">
-              <label
-                for="email"
-                class="text-[1rem] block text-gray-700 font-medium mb-2"
-                >Email</label
-              >
-              <input
-                type="email"
-                id="email"
-                class="input-field"
-                placeholder="Your Email"
-              />
+              <label for="email" class="text-[1rem] block text-gray-700 font-medium mb-2">Email</label>
+              <input type="email" id="email" name="user_email" class="input-field" placeholder="Your Email" required>
             </div>
-
+        
             <div class="mb-4">
-              <label
-                for="subject"
-                class="text-[1rem] block text-gray-700 font-medium mb-2"
-                >Subject</label
-              >
-              <input
-                type="text"
-                id="subject"
-                class="input-field"
-                placeholder="Subject"
-              />
+              <label for="subject" class="text-[1rem] block text-gray-700 font-medium mb-2">Subject</label>
+              <input type="text" id="subject" name="user_subject" class="input-field" placeholder="Subject" required>
             </div>
-
+        
             <div class="mb-6">
-              <label
-                for="message"
-                class="text-[1rem] block text-gray-700 font-medium mb-2"
-                >Message</label
-              >
-              <textarea
-                id="message"
-                class="input-field"
-                rows="4"
-                placeholder="Your Message"
-              ></textarea>
+              <label for="message" class="text-[1rem] block text-gray-700 font-medium mb-2">Message</label>
+              <textarea id="message" name="user_message" class="input-field" rows="4" placeholder="Your Message" required></textarea>
             </div>
-
-            <button
-              type="button"
-              onclick="validateForm()"
-              class="btn-submit text-xs"
-            >
-              Send Message
-            </button>
+        
+            <button type="button" onclick="validateForm()" class="btn-submit text-xs">Send Message</button>
           </form>
-        </div>
+        </div>        
       </div>
     </section>
     <!--! Start Contact Section -->
+
+     <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your User ID
+    emailjs.init("JApt4YMQm9FUyiVEz"); // Replace with your EmailJS User ID
+  </script>
 
     <script src="../dist/js/main.bundle.js"></script>
     <script src="./js/main.js"></script>

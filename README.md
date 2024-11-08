@@ -1,4 +1,5 @@
-# Nikhil Kamboj Portfolio
+
+# 🚀 Nikhil Kamboj Portfolio
 
 ## Table of Contents
 
@@ -17,24 +18,30 @@
 
 This is my personal portfolio website, designed to showcase my skills, experience, and achievements as a Frontend Developer. The website provides a comprehensive view of my professional journey and technical capabilities.
 
-## Project Overview
+## 📋 Project Overview
 
 The goal of this project is to create a modern, responsive, and interactive portfolio website that highlights my professional profile, technical skills, and notable projects. The website serves as a digital representation of my capabilities and serves as a platform to connect with potential employers and collaborators.
 
-## Current Progress
+## ✨ Current Progress
 
-The project has made significant progress with the following features implemented:
+### 🔍 Form Validation Implementation
 
-- [x] Responsive website structure
-- [x] Detailed introduction section
-- [x] Projects showcase section
-- [x] About me section with detailed information
-- [x] Contact form with form validation
-- [x] Skills and experience section
-- [x] Downloadable CV
-- [x] Social media and contact links
-- [ ] Testimonials section (in progress)
-- [ ] Newsletter subscription (in progress)
+#### Key Achievements
+- ✅ Client-side form validation
+- ✅ Real-time input validation
+- ✅ Comprehensive error handling
+
+#### Validation Features
+- Email format validation
+- Required field checks
+- Input length constraints
+- Dynamic error messaging
+
+#### Validation Techniques
+- Regular expression pattern matching
+- JavaScript validation logic
+- DOM manipulation for error display
+
 
 ## Features
 
@@ -91,3 +98,22 @@ npm install
 # Start the development server
 npm start
 ```
+
+
+
+
+
+
+
+
+
+A personal portfolio website showcasing my skills and projects as a Frontend Developer.
+
+## 🛠 Current Technologies
+
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat&logo=css3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat&logo=javascript)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Webpack](https://img.shields.io/badge/-Webpack-8DD6F9?style=flat&logo=webpack&logoColor=white)
+
