@@ -40,8 +40,10 @@ body {
   margin: auto;
   background-image: url("../../public/images/headerBG.jpg");
   background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   box-shadow: 2px 2px 5px 4px $color-green inset;
-  animation: changeBackground 10s 1;
+  animation: changeBackground 11s 1;
 }
 .logo {
   & > img {
@@ -73,29 +75,30 @@ body {
 //! END NAVBAR //
 
 //* styles on Main section *//
-
 .main-section {
   @include bg-style('../../public/images/headerBG.jpg');
   background-size: cover;
   background-position: center;
-  animation: changeBackground 9s 1; 
+  animation: changeBackground 12s 1;
 
   @keyframes changeBackground {
       0% {
           background-image: url("../../public/images/headerBG.jpg");
       }
       33% {
-          background-image: url("../../public/images/photo-1607001172087-308413970c9e.avif");
+          background-image: url("../../public/images/kamboj-store-project.webp");
       }
-      66% {
+      57% {
           background-image: url("../../public/images/logo.png");
       }
-      100% {
+      78% {
           background-image: url("../../public/images/premium_photo-1678566154673-a728037f3f00.avif"); 
+      }
+      100% {
+        background-image: url("../../public/images/headerBG.jpg");
       }
   }
 }
-
 
 .wrapper {
   max-width: 80%;
@@ -364,7 +367,7 @@ body {
   background-color: $bg-contact;
 }
 .contact-wrapper {
-  max-width: 75%;
+  max-width: 85%;
   margin: auto;
   box-shadow: 10px 10px 10px $dark-black inset, 10px 10px 10px $dark-black;
   padding: 2rem;
@@ -382,14 +385,9 @@ body {
 
 // iframe styles
 
-.location iframe {
-
- 
-}
 
 .location {
-  width: 30rem;
-  height: 73vh;
+  height: 30rem;
   position: relative;
   overflow: hidden;
   border-radius: 1rem;
@@ -412,4 +410,146 @@ body {
   }
 }
 
+.form-wrapper{
+
+  #contactForm{
+    width: 28rem;
+  }
+}
+
 //! End Contact Section
+
+
+
+// Responsive Design
+
+/* Small devices (mobile) */
+@media (max-width: 480px) {
+  html{
+    font-size: 58%;
+  }
+
+  //* header section //
+  .nav-container{
+    @apply flex flex-col items-start  m-4  ;
+    & >*{
+      border: 3px solid $color-white;
+    }
+
+    & .list-items{
+      @apply w-[90vw] mx-auto;
+    }
+  }
+
+
+  //* Contact Section //
+  .contact-wrapper{
+    @apply max-w-[90vw] h-auto;
+  }
+  .location{
+    @apply max-h-[50vh] w-[80vw] order-2;
+    & iframe{
+    opacity: 1;
+    }
+  }
+  .form-wrapper{
+    @apply order-1 ;
+    #contactForm{
+     @apply w-[80vw] h-[60rem];
+     
+     & h2{
+      font-size: 1.5rem;
+     }
+    *{
+     font-size: 1em * 2;
+     }
+     .btn-submit{
+      padding: 1.2rem 2.2rem;
+      font-size: 1.5rem;
+     }
+
+    }
+  }
+}
+
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  html{
+    font-size: 60%;
+  }
+//* Contact Section //
+.contact-wrapper{
+  @apply max-w-[90vw] h-auto;
+}
+.location{
+  @apply max-h-[50vh] w-[80vw] order-2;
+  & iframe{
+  opacity: 1;
+  }
+}
+.form-wrapper{
+  @apply order-1 ;
+  #contactForm{
+   @apply w-[80vw] h-[60rem];
+   
+   & h2{
+    font-size: 1.5rem;
+   }
+  *{
+   font-size: 1em * 2;
+   }
+   .btn-submit{
+    padding: 1.2rem 2.2rem;
+    font-size: 1.5rem;
+   }
+
+  }
+}
+}
+
+/* Large devices (desktops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  html{
+    font-size: 60%;
+  }
+
+      //* Contact Section //
+  .contact-wrapper{
+    @apply max-w-[90vw] h-auto;
+    flex-wrap: nowrap;
+  }
+  .location{
+    @apply h-[42rem] w-[30rem] ;
+  }
+  .form-wrapper{
+    #contactForm{
+     @apply w-[30rem] h-[40rem];
+     & h2{
+      font-size: 1.5rem;
+     }
+    *{
+     font-size: 1em * 1.6;
+     }
+    }
+  }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  html{
+    font-size: 65%;
+  }
+}
+
+/* 2X extra large devices (larger desktops) */
+@media (min-width: 1281px) and (max-width: 1440px) {
+  html{
+    font-size: 62%;
+  }
+  
+
+
+ 
+}
+

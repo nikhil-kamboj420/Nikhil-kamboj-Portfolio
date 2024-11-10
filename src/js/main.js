@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 60) {
+    if (window.scrollY >= sectionTop - 10) {
       currentSection = section.getAttribute('id');
     }
   });
@@ -117,3 +117,13 @@ inputFields.forEach((field) => {
   field.addEventListener('focus', handleInputFocus);
   field.addEventListener('blur', handleInputBlur);
 });
+
+// resolved the big issue with the  overflow  of the text area form the out side of the form container for a specific screen size range
+
+let textArea = document.getElementById("message");
+if(window.innerWidth >= 748 ){
+  if(window.innerWidth <= 1028){
+    let Rows = textArea.rows = 1;
+    console.log(Rows);
+  }
+}
