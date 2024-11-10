@@ -121,9 +121,6 @@ inputFields.forEach((field) => {
 // resolved the big issue with the  overflow  of the text area form the out side of the form container for a specific screen size range
 
 let textArea = document.getElementById("message");
-if(window.innerWidth >= 748 ){
-  if(window.innerWidth <= 1028){
-    let Rows = textArea.rows = 1;
-    console.log(Rows);
-  }
+if(window.innerWidth >= 748 && window.innerWidth <= 1028){
+    textArea.rows = 1;
 }
