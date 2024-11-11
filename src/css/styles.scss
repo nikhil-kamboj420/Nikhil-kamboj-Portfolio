@@ -191,7 +191,7 @@ body {
           box-shadow: 10px 10px 20px $bg-black;
         }
       }
-      .contant-wrapper {
+      .contact-info {
         & h3,
         a {
           font-weight: 500;
@@ -420,37 +420,34 @@ body {
 
 
 // Responsive Design
-
-/* Small devices (mobile) */
-@media (max-width: 480px) {
+@media (max-width: 480px){
   html{
     font-size: 58%;
   }
+//* header section //
+.nav-container {
+  @apply flex flex-col items-start  m-4 gap-2 ;
+  & >*:not(.nav-links,.logo) {
+    border: 3px solid $color-white;
+  }
 
-  //* header section //
-  .nav-container{
-    @apply flex flex-col items-start  m-4 gap-2 ;
-    & >*:not(.nav-links,.logo){
-      border: 3px solid $color-white;
-    }
+  & > .nav-links {
+    @apply my-6 relative left-[5rem] ;
 
-    & > .nav-links{
-      @apply my-6 relative left-[5rem] ;
+    & .list-items {
+      @apply w-[100%] mx-auto;
 
-      & .list-items{
-        @apply w-[100%] mx-auto;
-
-        & * {
-          font-size: 1em * 1.7;
-        }
+      & * {
+        font-size: 1em * 1.7;
       }
     }
-
-    .resumeBtn{
-      @apply absolute top-[1.6rem] right-0;
-    }
-
   }
+
+  .resumeBtn {
+    @apply absolute top-[1.6rem] right-0;
+  }
+
+}
 
   //* main section //
   .wrapper{
@@ -465,12 +462,84 @@ body {
   }
 
 
+  //* about section //
+  #about-section {
+    .about-wapper{
+      @apply max-w-[100%] border-2 border-white border-solid;
+
+      .part1{
+        @apply max-w-[100%] block border-2 border-white border-solid;
+        & >*{
+          margin-bottom: 4rem;
+        }
+        img{
+        @apply max-w-[20rem];
+        }
+        .part1-contant{
+          @apply max-w-[100%] p-4;
+          h2:not(:nth-last-child(2)){
+            font-size: 4rem;
+            padding: 3rem;
+          }
+          & >*{
+            font-size: 1em * 3;
+          }
+        }
+        .contact-info {
+          h3{
+            font-size: 3rem;
+            padding: 1.2rem 2.2rem;
+            margin-bottom: 2rem;
+          }
+          span{
+            font-size: 1.4rem;
+            margin: 1rem 0;
+          }
+        }
+      }
+      .part2{
+        .part2-contant{
+          @apply max-w-[100%];
+          & > div {
+            @apply grid-cols-1 gap-4;
+            h4{
+              font-size: 2.5rem;
+            }
+            p,li{
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  //*  Achievements //
+
+  .container{
+    .card{
+      & *>*{
+          margin-bottom: 1rem;
+      }
+       h2{
+        font-size: 2.5rem;
+       }
+       p,li{
+        font-size: 1.7rem;
+        line-height: 2;
+       }
+    }
+  }
+
+
   //* project section //
 
   .project-flex{
     @apply flex flex-col items-center justify-center gap-[5rem];
+    & * > *>*{
+      font-size: 1em*3;
+    }
   }
-
 
   //* Contact Section //
   .contact-wrapper{
@@ -485,10 +554,16 @@ body {
   .form-wrapper{
     @apply order-1 ;
     #contactForm{
-     @apply w-[80vw] h-[60rem];
-     
+     @apply w-[80vw] h-auto;
+     input{
+      min-height: 4rem;
+     }
+     textarea{
+      min-height: 8rem;
+     }
      & h2{
-      font-size: 1.5rem;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
      }
     *{
      font-size: 1em * 2;
@@ -564,10 +639,16 @@ body {
 .form-wrapper{
   @apply order-1 ;
   #contactForm{
-   @apply w-[80vw] h-[60rem];
-   
+   @apply w-[80vw] h-auto;
+   input{
+    min-height: 4rem;
+   }
+   textarea{
+    min-height: 8rem;
+   }
    & h2{
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
    }
   *{
    font-size: 1em * 2;
@@ -616,9 +697,11 @@ body {
     @apply flex-col gap-6 p-5;
     .intro-content{
      @apply max-w-[90%];
-     
+     h1{
+      @apply text-[5.5rem];
+     }
      p{
-      @apply text-[1.5rem];
+      @apply text-[2rem];
      }
     } 
   }
@@ -635,8 +718,15 @@ body {
   .form-wrapper{
     #contactForm{
      @apply w-[30rem] h-[40rem];
+     input{
+      min-height: 3rem;
+     }
+     textarea{
+      min-height: 4rem;
+     }
      & h2{
-      font-size: 1.5rem;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
      }
     *{
      font-size: 1em * 1.6;
@@ -645,21 +735,16 @@ body {
   }
 }
 
-/* Extra large devices (large desktops) */
-@media (min-width: 1025px) and (max-width: 1280px) {
-  html{
-    font-size: 65%;
-  }
-}
-
-/* 2X extra large devices (larger desktops) */
-@media (min-width: 1281px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1248px){
   html{
     font-size: 62%;
   }
-  
-
-
- 
 }
+
+@media (min-width: 1249px) and (max-width: 1400px){
+  html{
+    font-size: 62%;
+  }
+}
+
 
