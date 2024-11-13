@@ -16,12 +16,19 @@ document.querySelectorAll('.list-items a').forEach(anchor => {
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.list-items a');
 
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(link => link.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
 window.addEventListener('scroll', () => {
   let currentSection = '';
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 10) {
+    if (window.scrollY >= sectionTop - 50) {
       currentSection = section.getAttribute('id');
     }
   });
@@ -33,7 +40,6 @@ window.addEventListener('scroll', () => {
     }
   });
 });
-
 
 // about secton acheivments
 
