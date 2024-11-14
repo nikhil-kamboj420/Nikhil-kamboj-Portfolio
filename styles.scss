@@ -73,26 +73,26 @@ body {
 
 //* styles on Main section *//
 .main-section {
-  @include bg-style('../../public/images/headerBG.jpg');
+  @include bg-style('./images/headerBG.jpg');
   background-size: cover;
   background-position: center;
   animation: changeBackground 12s 1 cubic-bezier(0.4, 0, 0.2, 1);
 
   @keyframes changeBackground {
       0% {
-          background-image: url("../../public/images/headerBG.jpg");
+          background-image: url("./images/headerBG.jpg");
       }
       33% {
-          background-image: url("../../public/images/kamboj-store-project.webp");
+          background-image: url("./images/kamboj-store-project.webp");
       }
       55% {
-          background-image: url("../../public/images/logo.png");
+          background-image: url("./images/logo.png");
       }
       81% {
-          background-image: url("../../public/images/premium_photo-1678566154673-a728037f3f00.avif"); 
+          background-image: url("./images/premium_photo-1678566154673-a728037f3f00.avif"); 
       }
       100% {
-        background-image: url("../../public/images/headerBG.jpg");
+        background-image: url("./images/headerBG.jpg");
       }
   }
 }
