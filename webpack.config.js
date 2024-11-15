@@ -3,11 +3,11 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    main: ['./src/js/main.js', './src/css/styles.scss'],
+    main: ['./main.js', './styles.scss'],
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist/js')
+    path: path.resolve(__dirname, './js')
   },
   module: {
     rules: [

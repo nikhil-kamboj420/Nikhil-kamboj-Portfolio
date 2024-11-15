@@ -438,7 +438,7 @@ body {
 // Responsive Design
 @media (max-width: 480px){
   html{
-    font-size: 58%;
+    font-size: 50%;
   }
 //* header section //
 .nav-container {
@@ -466,8 +466,11 @@ body {
 }
 
   //* main section //
+  .main-section {
+    @include bg-style('./images/headerBG.jpg');
+    background-size: cover;
   .wrapper{
-    @apply flex-col gap-6 p-5;
+    @apply flex-col gap-6 p-5; 
     .intro-content{
      @apply max-w-[90%];
      
@@ -475,16 +478,15 @@ body {
       @apply text-[1.5rem];
      }
     } 
+   }
   }
-
-
   //* about section //
   #about-section {
     .about-wapper{
-      @apply max-w-[100%] border-2 border-white border-solid;
+      @apply max-w-[100%];
 
       .part1{
-        @apply max-w-[100%] block border-2 border-white border-solid;
+        @apply max-w-[100%];
         & >*{
           margin-bottom: 4rem;
         }
@@ -551,7 +553,7 @@ body {
   //* project section //
 
   .project-flex{
-    @apply flex flex-col items-center justify-center gap-[5rem];
+    @apply w-[100vw] flex flex-col items-center justify-center gap-[5rem];
     & * > *>*{
       font-size: 1em*3;
     }
@@ -585,7 +587,7 @@ body {
      font-size: 1em * 2;
      }
      .btn-submit{
-      padding: 1.2rem 2.2rem;
+      padding: 1.8rem 2.2rem;
       font-size: 1.5rem;
      }
 
