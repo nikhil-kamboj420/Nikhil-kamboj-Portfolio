@@ -17,6 +17,17 @@ body {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
+  background-color: white; /* Default background color */
+  animation: fadeInBackground 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInBackground {
+  0% {
+    background-color: black; /* Initial color */
+  }
+  100% {
+    background-color: white; /* Final color */
+  }
 }
 //* Define the header-style mixin  *//
 @mixin bg-style($image-url) {
@@ -81,6 +92,8 @@ body {
   @keyframes changeBackground {
       0% {
           background-image: url("./images/headerBG.jpg");
+          opacity: 1;
+          filter: contrast(200%);
       }
       33% {
           background-image: url("./images/kamboj-store-project.webp");
