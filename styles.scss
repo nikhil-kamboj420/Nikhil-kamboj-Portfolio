@@ -18,15 +18,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
   background-color: white; /* Default background color */
-  animation: fadeInBackground 0.5s ease-in-out forwards;
+animation: fadeInBackground 1500s ease-in-out forwards;
 }
 
 @keyframes fadeInBackground {
   0% {
     background-color: black; /* Initial color */
   }
+  50%{
+    background-color: $color-white;
+  }
   100% {
-    background-color: white; /* Final color */
+    background-color: black; /* Final color */
   }
 }
 //* Define the header-style mixin  *//
@@ -117,12 +120,12 @@ body {
   .intro-text {
     color: $color-white;
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s ease forwards;
+    transform: translateY(50px);
+    animation: fadeInUp 3s ease forwards;
   }
   /* Delay the <p> tag slightly to create a staggered effect */
   .intro-text:nth-of-type(2) {
-    animation-delay: 0.3s;
+    animation-delay: 1s;
   }
   @keyframes fadeInUp {
     to {
