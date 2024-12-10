@@ -140,7 +140,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     object-fit: contain;
     border-radius: 50%;
     filter: drop-shadow(4px 4px 4px $color-green);
-    border: 5px solid $color-white;
 
     &:hover{
       scale: 1.1;
@@ -615,7 +614,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
      font-size: 1em * 2;
      }
      .btn-submit{
-      padding: 1.8rem 2.2rem;
+      padding: 2.2rem 2.2rem;
       font-size: 1.5rem;
      }
 
@@ -716,7 +715,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
    font-size: 1em * 2;
    }
    .btn-submit{
-    padding: 1.2rem 2.2rem;
+    padding: 1.8rem 2.2rem;
     font-size: 1.5rem;
    }
 
@@ -794,7 +793,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
   }
   .form-wrapper{
     #contactForm{
-     @apply w-[30rem] h-[40rem];
+     @apply w-[30rem] h-auto;
      input{
       min-height: 3rem;
      }
@@ -804,6 +803,10 @@ animation: fadeInBackground 1500s ease-in-out forwards;
      & h2{
       font-size: 3rem;
       margin-bottom: 1.5rem;
+     }
+     .btn-submit{
+      padding: 1.2rem 2.2rem;
+      font-size: 1.5rem;
      }
     *{
      font-size: 1em * 1.6;
