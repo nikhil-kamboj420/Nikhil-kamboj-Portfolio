@@ -626,9 +626,11 @@ animation: fadeInBackground 1500s ease-in-out forwards;
      @apply w-[80vw] h-auto;
      input{
       min-height: 4rem;
+      font-size: 2rem !important;
      }
      textarea{
-      min-height: 8rem;
+      min-height: 6rem !important;
+      font-size: 2rem !important;
      }
      & h2{
       font-size: 3rem;
@@ -727,9 +729,11 @@ animation: fadeInBackground 1500s ease-in-out forwards;
    @apply w-[80vw] h-auto;
    input{
     min-height: 4rem;
+    font-size: 2rem !important;
    }
    textarea{
-    min-height: 8rem;
+    min-height: 6rem !important;
+    font-size: 2rem !important;
    }
    & h2{
     font-size: 3rem;
@@ -819,10 +823,12 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     #contactForm{
      @apply w-[30rem] h-auto;
      input{
-      min-height: 3rem;
+      min-height: 4rem;
+      font-size: 2rem !important;
      }
      textarea{
-      min-height: 4rem;
+      min-height: 6rem !important;
+      font-size: 2rem !important;
      }
      & h2{
       font-size: 3rem;
