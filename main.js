@@ -148,6 +148,7 @@ window.addEventListener('load',()=> {
 })
 
 const header = document.getElementById('header');
+const nav = document.getElementById('navbar');
 const mainSection = document.getElementById('main-section');
 const aboutSection = document.getElementById('about-section');
 const projectSection = document.getElementById('project-section');
@@ -156,6 +157,7 @@ const contactSection = document.getElementById('contact-section');
 window.addEventListener('load', () => {
   setTimeout(() => {
     header.style.display = 'block';
+    nav.style.visibility='visible';
     mainSection.style.display = 'block';
     aboutSection.style.display = 'block';
     projectSection.style.display = 'block';
