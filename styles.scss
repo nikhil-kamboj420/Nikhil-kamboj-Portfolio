@@ -13,12 +13,43 @@ $bg-contact: #373346;
   padding: 0;
   box-sizing: border-box;
 }
+
+#dummy-box{
+  display: block;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: hsla(0, 0%, 0%, 1);
+  display: grid;
+  place-content: center;
+
+  & h1{
+    font-size: 5rem;
+    font-weight: bolder;
+    color: hsla(0, 0%, 100%, 1); 
+    text-shadow: 3px 3px 6px hsla(0, 0%, 0%, 0.7), -3px -3px 6px hsla(0, 0%, 100%, 0.5);
+  }
+}
+
+#header{
+  display: none;
+}
+#main-section{
+  display: none;
+}
+#about-section{
+  display: none;
+}
+
+#contact-section{
+  display: none;
+}
+
 body {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
   scroll-behavior: smooth;
   background-color: white; /* Default background color */
-animation: fadeInBackground 1500s ease-in-out forwards;
+  animation: fadeInBackground 1500s ease-in-out forwards;
 }
 
 @keyframes fadeInBackground {
@@ -32,6 +63,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     background-color: black; /* Final color */
   }
 }
+
 //* Define the header-style mixin  *//
 @mixin bg-style($image-url) {
   max-width: 100%;
@@ -56,7 +88,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   box-shadow: 2px 2px 5px 4px $color-green inset;
-  animation: changeBackground 11s 1 cubic-bezier(0.4, 0, 0.2, 1);
+  animation: changeBackground 8s 1 cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo {
   & > img {
@@ -86,11 +118,11 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 //! END NAVBAR //
 
 //* styles on Main section *//
-.main-section {
-  @include bg-style('./images/headerBG.jpg');
+#main-section {
   background-size: cover;
   background-position: center;
-  animation: changeBackground 12s 1 cubic-bezier(0.4, 0, 0.2, 1);
+  animation: changeBackground 9s 1 cubic-bezier(0.4, 0, 0.2, 1);
+  @include bg-style('./images/headerBG.jpg');
 
   @keyframes changeBackground {
       0% {
@@ -164,7 +196,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     color: $bg-black;
   }
   .about-wapper {    
-    filter: drop-shadow(5px 7px 8px $color-green);
     max-width: 90%;
     margin: auto;
     box-shadow: 10px 10px 20px $bg-black;
@@ -172,7 +203,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
       padding: 2rem;
       .my-image {
         box-shadow: 10px 10px 20px $bg-black;
-        filter: drop-shadow(5px 7px 8px $color-green);
       }
       .my-image img {
         max-width: 25rem;
@@ -183,12 +213,13 @@ animation: fadeInBackground 1500s ease-in-out forwards;
           transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
       }
+      
       .message-bubble {
         padding: 20px;
         background-color: #e0f7fa;
         border-radius: 15px;
         position: relative;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
         font-family: Arial, sans-serif;
         color: #00796b;
       }
@@ -310,7 +341,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 
 // !End  of About Section//
 
-
 .contact-links {
   .flex a {
     transition: transform 0.3s ease, color 0.3s ease;
@@ -324,7 +354,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     }
   }
 }
-
 
 //* styling on project-section *//
 
@@ -348,15 +377,16 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     box-shadow: 10px 10px 10px $bg-light-black;
     border-radius: 50% 60% 50% 50%;    
     filter: drop-shadow(5px 7px 8px $color-green);
+    display: inline-block;
   }
 }
 .project-flex {
   margin: 2rem auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 2rem;  
+  gap: 8rem;
 }
 .project-card {
   background-color: $bg-light-black;
@@ -419,7 +449,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 
 // iframe styles
 
-
 .location {
   height: 30rem;
   position: relative;
@@ -470,8 +499,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 
 //! End Contact Section
 
-
-
 // Responsive Design
 @media (max-width: 480px){
   html{
@@ -503,10 +530,10 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 }
 
   //* main section //
-  .main-section {
-    @include bg-style('./images/headerBG.jpg');
+  #main-section {
     background-size: cover;
-  .wrapper{
+    @include bg-style('./images/headerBG.jpg');
+   .wrapper{
     @apply flex-col gap-6 p-5; 
     .intro-content{
      @apply max-w-[90%];
@@ -713,42 +740,34 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     @apply flex flex-col items-center justify-center gap-[5rem];
   }
 
-//* Contact Section //
-.contact-wrapper{
-  @apply max-w-[90vw] h-auto;
-}
-.location{
-  @apply max-h-[50vh] w-[80vw] order-2;
-  & iframe{
-  opacity: 1;
+  //* Contact Section //
+  .contact-wrapper{
+    @apply max-w-[90vw] h-auto;
   }
-}
-.form-wrapper{
-  @apply order-1 ;
-  #contactForm{
-   @apply w-[80vw] h-auto;
-   input{
-    min-height: 4rem;
-    font-size: 2rem !important;
-   }
-   textarea{
-    min-height: 6rem !important;
-    font-size: 2rem !important;
-   }
-   & h2{
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
-   }
-  *{
-   font-size: 1em * 2;
-   }
-   .btn-submit{
-    padding: 1.8rem 2.2rem;
-    font-size: 1.5rem;
-   }
-
+  .location{
+    @apply max-h-[50vh] w-[80vw] order-2;
+    & iframe{
+    opacity: 1;
+    }
   }
-}
+  .form-wrapper{
+    @apply order-1 ;
+    #contactForm{
+     @apply w-[80vw] h-auto;
+     input{
+      min-height: 4rem;
+      font-size: 2rem !important;
+     }
+     textarea{
+      min-height: 6rem !important;
+      font-size: 2rem !important;
+     }
+     & h2{
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+     }
+    }
+  }
 }
 
 /* Large devices (desktops) */
@@ -858,7 +877,7 @@ animation: fadeInBackground 1500s ease-in-out forwards;
 
 @media (min-width: 1249px) and (max-width: 1400px){
   html{
-    font-size: 62%;
+    font-size: 64%;
   }
   //* about section
   .my-image img{
@@ -866,7 +885,6 @@ animation: fadeInBackground 1500s ease-in-out forwards;
     filter: drop-shadow(31px 8px 31px $bg-dark-green);
   }
 }
-
 @media (min-width: 1400px) {
     //* about section
     .my-image img{

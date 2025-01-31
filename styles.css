@@ -696,7 +696,7 @@ body {
   background-color: #3a3b3a;
 }
 
-.main-section {
+#main-section {
   max-width: 100%;
   background-image: linear-gradient(
       to bottom,
@@ -710,7 +710,7 @@ body {
   height: 100vh;
 }
 
-.main-section > * {
+#main-section > * {
   color: #fff;
 }
 
