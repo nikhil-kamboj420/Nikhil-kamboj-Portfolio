@@ -1,5 +1,4 @@
-
-// Smooth scrolling for navigation links
+//* Smooth scrolling for navigation links
 document.querySelectorAll('.list-items a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -16,19 +15,13 @@ document.querySelectorAll('.list-items a').forEach(anchor => {
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.list-items a');
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.forEach(link => link.classList.remove('active'));
-    link.classList.add('active');
-  });
-});
-
-window.addEventListener('scroll', () => {
+const updateActiveLink = () => {
   let currentSection = '';
 
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 50) {
+    const sectionHeight = section.offsetHeight;
+    if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
       currentSection = section.getAttribute('id');
     }
   });
@@ -39,10 +32,17 @@ window.addEventListener('scroll', () => {
       link.classList.add('active');
     }
   });
+};
+
+// Initial check on page load
+window.addEventListener('load', () => {
+  updateActiveLink();
 });
 
-// about secton acheivments
+// Update on scroll
+window.addEventListener('scroll', updateActiveLink);
 
+//* about section achievements
 document.querySelectorAll('.card').forEach(card => {
   card.addEventListener('mouseover', () => {
     card.classList.add('shadow-2xl');
@@ -52,9 +52,7 @@ document.querySelectorAll('.card').forEach(card => {
   });
 });
 
-
-// form validation
-
+//? form validation
 function validateForm() {
   // Get form values
   const name = document.getElementById('name').value.trim();
@@ -124,9 +122,43 @@ inputFields.forEach((field) => {
   field.addEventListener('blur', handleInputBlur);
 });
 
-// resolved the big issue with the  overflow  of the text area form the out side of the form container for a specific screen size range
-
+//? resolved the big issue with the overflow of the text area form the outside of the form container for a specific screen size range
 let textArea = document.getElementById("message");
 if(window.innerWidth >= 748 && window.innerWidth <= 1028){
     textArea.rows = 1;
 }
+
+// *#####    profile image related queries  ##### 
+window.addEventListener('load', function() {
+  let profileImage = document.getElementById('dp');
+  profileImage.style.filter="drop-shadow(5px 7px 8px #37e614)";
+  profileImage.style.opacity = 0;
+  setTimeout(function() {
+    profileImage.style.transition = 'opacity 0.2s';
+    profileImage.style.opacity = 1;
+  }, 10000);
+});
+
+const dummyBox = document.getElementById('dummy-box');
+
+window.addEventListener('load',()=> {
+  setTimeout(()=> {
+    dummyBox.style.display = 'none';
+  },1500)
+})
+
+const header = document.getElementById('header');
+const mainSection = document.getElementById('main-section');
+const aboutSection = document.getElementById('about-section');
+const projectSection = document.getElementById('project-section');
+const contactSection = document.getElementById('contact-section');
+
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    header.style.display = 'block';
+    mainSection.style.display = 'block';
+    aboutSection.style.display = 'block';
+    projectSection.style.display = 'block';
+    contactSection.style.display = 'block';
+  }, 1600);
+});
