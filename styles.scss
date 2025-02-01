@@ -22,12 +22,28 @@ $bg-contact: #373346;
   display: grid;
   place-content: center;
 
-  & h1{
-    font-size: 5rem;
-    font-weight: bolder;
-    color: hsla(0, 0%, 100%, 1); 
-    text-shadow: 3px 3px 6px hsla(0, 0%, 0%, 0.7), -3px -3px 6px hsla(0, 0%, 100%, 0.5);
+& h1{
+  font-size: 5rem;
+  font-weight: bolder;
+  color: hsla(0, 0%, 100%, 1); 
+  text-shadow: 3px 3px 6px hsla(0, 0%, 0%, 0.7), -3px -3px 6px hsla(0, 0%, 100%, 0.5);
+  transform: scale(0);
+  animation: zoomIn 1s ease-out forwards;
+  &:hover {
+    transform: scale(0.9);
   }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 }
 
 #header{
@@ -51,8 +67,8 @@ $bg-contact: #373346;
 body {
   font-size: 62.5%;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #070c0f;
   scroll-behavior: smooth;
-  background-color: white; /* Default background color */
   animation: fadeInBackground 1500s ease-in-out forwards;
 }
 
@@ -109,6 +125,7 @@ body {
     padding: 0.3rem;
     box-shadow: 4px 2px 3px $color-green;
     border-radius: 2rem;
+    font-display: swap;
   }
   // class for currentSection link, Navigation
   .active{
@@ -126,11 +143,11 @@ body {
   background-size: cover;
   background-position: center;
   animation: changeBackground 9s 1 cubic-bezier(0.4, 0, 0.2, 1);
-  @include bg-style('./images/headerBG.jpg');
+  @include bg-style('./images/headerBG.webp');
 
   @keyframes changeBackground {
       0% {
-          background-image: url("./images/headerBG.jpg");
+          background-image: url("./images/headerBG.webp");
           opacity: 1;
           filter: contrast(200%);
       }
@@ -138,13 +155,13 @@ body {
           background-image: url("./images/kamboj-store-project.webp");
       }
       55% {
-          background-image: url("./images/logo.png");
+          background-image: url("./images/logo.webp");
       }
       81% {
-          background-image: url("./images/premium_photo-1678566154673-a728037f3f00.avif"); 
+          background-image: url("./images/premium_photo-1678566154673-a728037f3f00.webp"); 
       }
       100% {
-        background-image: url("./images/headerBG.jpg");
+        background-image: url("./images/headerBG.webp");
       }
   }
 }
@@ -536,7 +553,7 @@ body {
   //* main section //
   #main-section {
     background-size: cover;
-    @include bg-style('./images/headerBG.jpg');
+    @include bg-style('./images/headerBG.webp');
    .wrapper{
     @apply flex-col gap-6 p-5; 
     .intro-content{

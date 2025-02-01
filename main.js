@@ -140,12 +140,11 @@ window.addEventListener('load', function() {
 });
 
 const dummyBox = document.getElementById('dummy-box');
-
-window.addEventListener('load',()=> {
+document.addEventListener("DOMContentLoaded",()=>{
   setTimeout(()=> {
     dummyBox.style.display = 'none';
-  },1500)
-})
+  },3000)
+});
 
 const header = document.getElementById('header');
 const nav = document.getElementById('navbar');
@@ -154,7 +153,8 @@ const aboutSection = document.getElementById('about-section');
 const projectSection = document.getElementById('project-section');
 const contactSection = document.getElementById('contact-section');
 
-window.addEventListener('load', () => {
+
+window.addEventListener('load',()=> {
   setTimeout(() => {
     header.style.display = 'block';
     nav.style.visibility='visible';
@@ -162,5 +162,12 @@ window.addEventListener('load', () => {
     aboutSection.style.display = 'block';
     projectSection.style.display = 'block';
     contactSection.style.display = 'block';
-  }, 1600);
-});
+  }, 100);
+})
+
+
+
+
+
+
+
