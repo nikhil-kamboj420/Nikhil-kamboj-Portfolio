@@ -8,6 +8,10 @@ $bg-light-black: #2d3132;
 $bg-dark-green: #bbfe03;
 $dark-black: #0f0f0f;
 $bg-contact: #373346;
+$bg-light-blue:hsl(215, 94%, 86%);
+$color-white-light:hsl(215, 100%, 94%);
+$bg-dark-blue:hsl(218, 82%, 59%);
+$comman-text:hsl(209, 32%, 26%);
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +20,8 @@ $bg-contact: #373346;
 
 #dummy-box{
   display: block;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background-color: hsla(0, 0%, 0%, 1);
   display: grid;
   place-content: center;
@@ -46,6 +50,7 @@ $bg-contact: #373346;
 }
 }
 
+
 #header{
   display: none;
 }
@@ -69,61 +74,26 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #070c0f;
   scroll-behavior: smooth;
-  animation: fadeInBackground 1500s ease-in-out forwards;
-}
-
-@keyframes fadeInBackground {
-  0% {
-    background-color: black; /* Initial color */
-  }
-  50%{
-    background-color: $color-white;
-  }
-  100% {
-    background-color: black; /* Final color */
-  }
-}
-
-//* Define the header-style mixin  *//
-@mixin bg-style($image-url) {
-  max-width: 100%;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 1),
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1)
-    ),
-    url($image-url);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  & > * {
-    color: $color-white;
-  }
 }
 
 .navbar {
   max-width: 100%;
   margin: auto;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  box-shadow: 2px 2px 5px 4px $color-green inset;
-  animation: changeBackground 8s 1 cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: $bg-light-blue;
+  box-shadow: 1px 2px 4px $bg-dark-blue;
 }
 .logo {
   & > img {
     max-width: 4rem;
-    filter: drop-shadow(4px 3px 3px rgba(0, 0, 0, 0.5));
   }
 }
 .list-items {
   & > li {
     list-style-type: none;
     font-size: 1.3rem;
-    color: #f0dd35;
-    border: 2px solid rgb(72, 69, 69);
+    color: $color-white-light;
+    background-color: $bg-dark-blue;
     padding: 0.3rem;
-    box-shadow: 4px 2px 3px $color-green;
     border-radius: 2rem;
     font-display: swap;
   }
@@ -136,49 +106,38 @@ body {
    box-shadow: 4px 2px 3px $color-green;
   }
 }
+.resumeBtn:hover{
+  background-color: $bg-dark-green;
+}
 //! END NAVBAR //
 
 //* styles on Main section *//
 #main-section {
-  background-size: cover;
-  background-position: center;
-  animation: changeBackground 9s 1 cubic-bezier(0.4, 0, 0.2, 1);
-  @include bg-style('./images/headerBG.webp');
-
-  @keyframes changeBackground {
-      0% {
-          background-image: url("./images/headerBG.webp");
-          opacity: 1;
-          filter: contrast(200%);
-      }
-      33% {
-          background-image: url("./images/kamboj-store-project.webp");
-      }
-      55% {
-          background-image: url("./images/logo.webp");
-      }
-      81% {
-          background-image: url("./images/premium_photo-1678566154673-a728037f3f00.webp"); 
-      }
-      100% {
-        background-image: url("./images/headerBG.webp");
-      }
-  }
+  background-color: $bg-light-blue;
 }
 
 .wrapper {
   max-width: 80%;
   margin: auto;
+  box-shadow: 1px 2px 4px $bg-dark-blue;
   //*  intro styling  *//
+  .intro-content{
+    background-color: $color-white-light;
+    padding: 2rem;
+    border-radius: 3rem;
+  }
   .intro-text {
-    color: $color-white;
+    color: $comman-text;
     opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 3s ease forwards;
+    transform: translateY(40px);
+    animation: fadeInUp 4s ease forwards;
   }
   /* Delay the <p> tag slightly to create a staggered effect */
+  .intro-text:nth-of-type(1) {
+    animation-delay: 2s;
+  }
   .intro-text:nth-of-type(2) {
-    animation-delay: 1s;
+    animation-delay: 3s;
   }
   @keyframes fadeInUp {
     to {
@@ -187,13 +146,14 @@ body {
     }
   }
   //! END intro styling  //
+  #dp{
+    filter: brightness(135%);
+  }
   .profile-img img {
     width: 25rem;
     aspect-ratio: 1;
     object-fit: contain;
     border-radius: 50%;
-    filter: drop-shadow(5px 7px 8px $color-green);
-
     &:hover{
       scale: 1.1;
       transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
@@ -207,23 +167,17 @@ body {
 #about-section {
   width: 100%;
   height: auto;
-  background: linear-gradient(
-    90deg,
-    rgba(7, 12, 15, 1) 0%,
-    rgba(45, 49, 50, 1) 100%
-  );
+  background-color: $bg-light-blue;
   padding: 4rem;
-  & * {
-    color: $bg-black;
-  }
+
   .about-wapper {    
     max-width: 90%;
     margin: auto;
-    box-shadow: 10px 10px 20px $bg-black;
+    box-shadow: 1px 2px 4px hsl(218, 82%, 59%);
     .part1 {
       padding: 2rem;
       .my-image {
-        box-shadow: 10px 10px 20px $bg-black;
+        box-shadow: 1px 2px 4px hsl(218, 82%, 59%);
       }
       .my-image img {
         max-width: 25rem;
@@ -237,12 +191,12 @@ body {
       
       .message-bubble {
         padding: 20px;
-        background-color: #e0f7fa;
+        background-color: $color-white-light;
         border-radius: 15px;
         position: relative;
-        box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 2px 4px hsl(218, 82%, 59%);
         font-family: Arial, sans-serif;
-        color: #00796b;
+        color: $comman-text;
       }
       .message-bubble::after {
         content: "";
@@ -258,43 +212,49 @@ body {
         border-left: 20px solid transparent;
       }
       .part1-contant {
-        background-color: $bg-dark-green;
+         background-color: $color-white-light;
         padding: 2rem;
-        box-shadow: 10px 10px 20px $bg-black;
         &:hover{
           scale: 1.1;
           transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
         & * {
-          color: #070c0f;
-          box-shadow: 10px 10px 20px $bg-black;
+          color: $comman-text;
         }
       }
       .contact-info {
         & h3,
-        a {
+        a ,span{
           font-weight: 500;
-          background-color: $bg-dark-green;
+          background-color: $bg-dark-blue;
           border-radius: 2rem;
-          box-shadow: 10px 10px 10px $bg-black;
+          box-shadow: 2px 4px 6px $bg-light-blue;
           padding: 0.5rem;
+          color: $color-white-light;
         }
       }
     }
     .part2 {
       .part2-contant {
-        background-color: $bg-dark-green;
+        background-color: $color-white-light;
         max-width: 80%;
         border-radius: 0 3rem 3rem 0;
-        box-shadow: 10px 10px 10px $bg-black;
+        box-shadow: 2px 4px 6px $bg-dark-blue;
         &:hover{
           scale: 1.1;
           transition: all 300ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
         }
-        h1,
+        h4{
+           background-color: $bg-dark-blue;
+           color: $color-white-light;
+           border-radius: 3rem;
+           display: inline-block;
+           padding: .5rem;
+        }
         p,
         li {
           font-size: 1.4rem;
+          color: $comman-text;
         }
       }
     }
@@ -303,17 +263,20 @@ body {
 
 //* about secton acheivments
 
-.text-ach >*{
-  color: $color-white !important;  
-  filter: drop-shadow(5px 7px 8px $color-green);
-}
 .card {
-  background-color: $bg-dark-green;
-  color: $color-white;
+  background-color: $color-white-light;
+  color: $comman-text;
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  & h2{
+    display: inline-block;
+    background-color: $bg-dark-blue;
+    padding: .5rem;
+    border-radius: 3rem;
+    color: $color-white-light;
+  }
   &:hover {
     transform: scale(1.05);
   }
@@ -376,10 +339,18 @@ body {
   }
 }
 
+.achievement{
+  box-shadow: 1px 0px 3px $bg-dark-blue;
+  .text-ach{
+    color: $color-white-light !important;
+    background-color: $bg-dark-blue;
+  }
+}
+
 //* styling on project-section *//
 
 #project-section {  
-  filter: drop-shadow(5px 7px 8px $color-green);
+  box-shadow: 2px 4px 6px $bg-dark-blue;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -387,18 +358,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: $dark-black;
+  background-color: $bg-light-blue;
   padding: 3rem 0;
-  * {
-    color: $color-white;    
-  }
+
   h4 {
     font-size: 4rem;
     margin-bottom: 1.92rem;
-    box-shadow: 10px 10px 10px $bg-light-black;
     border-radius: 50% 60% 50% 50%;    
-    filter: drop-shadow(5px 7px 8px $color-green);
     display: inline-block;
+    box-shadow: 2px 4px 6px $bg-dark-blue;
+    background-color: $bg-dark-blue;
+    color: $color-white-light;
   }
 }
 .project-flex {
@@ -410,13 +380,12 @@ body {
   gap: 8rem;
 }
 .project-card {
-  background-color: $bg-light-black;
+  background-color: $color-white-light;
   border-radius: 0.512rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 10px 10px 10px $bg-light-black;
   &:hover {
     transform: translateY(-0.64rem);
-    box-shadow: 10px 10px 10px $bg-dark-green;
+    box-shadow: 2px 4px 6px $bg-dark-blue;
   }
   img {
     max-width: 30rem;
@@ -427,15 +396,27 @@ body {
     padding: 1.28rem;
     max-width: 30rem;
     text-align: center;
+     & > h3{
+      color: $bg-dark-blue;
+     }
+     & > p {
+      color: $comman-text;
+     }
   }
   a {
     display: inline-block;
     margin-top: 0.96rem;
-    color: #007bff !important;
+    color: $color-white-light;
     text-decoration: none;
     font-weight: bold;
+    background-color: $bg-dark-blue;
+    border-radius: 3rem;
+    padding: .3rem;
+    font-size: 1rem;
     &:hover {
-      text-decoration: underline;
+      transform: scale(1.1);
+      color: $bg-light-blue;
+      transition: all  300ms ease-in;
     }
   }
 }
@@ -444,17 +425,17 @@ body {
 
 //? Styling on Contact Section
 #contact-section {
-  filter: drop-shadow(5px 7px 8px $color-green);
+  box-shadow: 2px 4px 6px $bg-dark-blue;
   max-width: 100%;
   margin: auto;
   padding: 2rem;
-  background-color: $bg-contact;
+  background-color: $bg-light-blue;
 }
 .contact-wrapper {  
-  filter: drop-shadow(5px 7px 8px $bg-contact);
+  box-shadow: 2px 4px 6px $bg-dark-blue;
   max-width: 85%;
   margin: auto;
-  box-shadow: 10px 10px 10px $dark-black inset, 10px 10px 10px $dark-black;
+  box-shadow: 2px 4px 6px $bg-dark-blue inset, 2px 4px 6px $bg-dark-blue;
   padding: 2rem;
 }
 
@@ -498,7 +479,7 @@ body {
 
   #contactForm{
     width: 28rem;    
-   filter: drop-shadow(5px 7px 8px $bg-contact);
+    
    & label{
     color: #007bff;
     font-weight: 700;
@@ -552,8 +533,6 @@ body {
 
   //* main section //
   #main-section {
-    background-size: cover;
-    @include bg-style('./images/headerBG.webp');
    .wrapper{
     @apply flex-col gap-6 p-5; 
     .intro-content{

@@ -14,7 +14,7 @@ document.querySelectorAll('.list-items a').forEach(anchor => {
 // Active link highlighting on scroll
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.list-items a');
-
+  
 const updateActiveLink = () => {
   let currentSection = '';
 
@@ -128,22 +128,11 @@ if(window.innerWidth >= 748 && window.innerWidth <= 1028){
     textArea.rows = 1;
 }
 
-// *#####    profile image related queries  ##### 
-window.addEventListener('load', function() {
-  let profileImage = document.getElementById('dp');
-  profileImage.style.filter="drop-shadow(5px 7px 8px #37e614)";
-  profileImage.style.opacity = 0;
-  setTimeout(function() {
-    profileImage.style.transition = 'opacity 0.2s';
-    profileImage.style.opacity = 1;
-  }, 10000);
-});
-
 const dummyBox = document.getElementById('dummy-box');
 document.addEventListener("DOMContentLoaded",()=>{
   setTimeout(()=> {
     dummyBox.style.display = 'none';
-  },3000)
+  },2000)
 });
 
 const header = document.getElementById('header');
@@ -164,7 +153,6 @@ window.addEventListener('load',()=> {
     contactSection.style.display = 'block';
   }, 100);
 })
-
 
 
 
