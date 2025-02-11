@@ -515,6 +515,9 @@ body {
 
   & > .nav-links {
     @apply my-6 relative left-[5rem] ;
+    & a,li{
+      padding: .5rem;
+    }
 
     & .list-items {
       @apply w-[100%] mx-auto;
@@ -634,6 +637,18 @@ body {
     @apply w-[100vw] flex flex-col items-center justify-center gap-[5rem];
     & * > *>*{
       font-size: 1em*3;
+    }
+    .project-card{
+      & img{
+        max-width: 80vw;
+      }
+      & .content {
+        max-width: 80vw;
+      }
+    }
+    & a{
+      font-size: 1.5rem;
+      padding: 1rem;
     }
   }
 
