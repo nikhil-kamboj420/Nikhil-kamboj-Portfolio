@@ -130,7 +130,7 @@ body {
     color: $comman-text;
     opacity: 0;
     transform: translateY(40px);
-    animation: fadeInUp 4s ease forwards;
+    animation: fadeInUp 2s ease forwards;
   }
   /* Delay the <p> tag slightly to create a staggered effect */
   .intro-text:nth-of-type(1) {
