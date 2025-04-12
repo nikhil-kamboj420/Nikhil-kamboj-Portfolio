@@ -142,16 +142,21 @@ const aboutSection = document.getElementById('about-section');
 const projectSection = document.getElementById('project-section');
 const contactSection = document.getElementById('contact-section');
 
+let transition = "all 3s ease-in";
 
-window.addEventListener('load',()=> {
+const sectionsToDisplay = [header, nav, mainSection, aboutSection, projectSection, contactSection];
+
+window.addEventListener('load', () => {
   setTimeout(() => {
-    header.style.display = 'block';
-    nav.style.visibility='visible';
-    mainSection.style.display = 'block';
-    aboutSection.style.display = 'block';
-    projectSection.style.display = 'block';
-    contactSection.style.display = 'block';
-  }, 100);
+    sectionsToDisplay.forEach(section => {
+      if (section === nav) {
+        section.style.visibility = 'visible';
+      } else {
+        section.style.display = 'block';
+      }
+      section.style.transition = transition;
+    });
+  }, 700);
 })
 
 
